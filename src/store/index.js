@@ -9,9 +9,13 @@ export default new Vuex.Store({
     ItemName:''
   },
   mutations: {
-    addIncrement (state) {
+    addIncrement (state,payload) {
       state.countItem++
-      state.ItemName = "イチゴ"//この部分をリンク先の商品名にしたい。
+      state.ItemName.push(payload);
     }
   },
 })
+
+
+
+
