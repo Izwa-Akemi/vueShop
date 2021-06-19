@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h2>商品情報一覧</h2>
-    <div v-for="shop in shoplist" v-bind:key="shop.id">
-      <router-link :to="{name: 'ShopDetailes', params: {shopId: shop.id}}">{{shop.name}}</router-link>
+     <div v-for="(shop,index) in shoplist" v-bind:key="index">
+      <router-link :to="{name: 'ShopDetailes', params: {shopId: index}}">{{shop.name}}</router-link>
     </div>
   </div>
 </template>
