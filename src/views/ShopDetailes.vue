@@ -5,7 +5,7 @@
      <p>{{this.shoplist[shopId].money}}</p>
      <button @click="buy">購入個数</button>
      <p>{{ $store.state.count }}</p>
-     <p>{{$store.state.ItemName}}の合計金額は{{this.shoplist[shopId].money * $store.state.items.countItem}}円です。</p>
+     <p>{{$store.state.ItemName}}の合計金額は{{this.shoplist[shopId].money * $store.state.countItem}}円です。</p>
     <router-link to="/">戻る</router-link>
   </div>
 </template>
@@ -13,8 +13,8 @@
 export default {
  methods:{
     buy(){
-      this.$store.commit('addIncrement',{name:this.itemName});
-      this.itemName = this.shoplist[shopId].name;
+      this.$store.commit('addIncrement',this.ItemName);
+      this.ItemName = this.shoplist[this.shopId].name;
     }
   },
   data() {
